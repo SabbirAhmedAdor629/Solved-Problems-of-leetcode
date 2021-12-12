@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+   Scanner in = new Scanner(System.in);
+        int sum = 0;
+        int pro = 1;
+        int n = in.nextInt();
+        for (int i=0;i<=n;i++){
+            int a = n%10;
+            sum +=a;
+            pro *= a;
+            n =n/10;
+        }
+        System.out.println(pro-sum);
+  }
+}
