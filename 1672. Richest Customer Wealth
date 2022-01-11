@@ -1,0 +1,33 @@
+   
+import java.util.Scanner;
+import java.util.Arrays;
+class Main {
+  public static void main(String[] args) {
+
+    Scanner in = new Scanner(System.in);
+    int wealth=0, sum=0;
+    int m = in.nextInt();
+    int n = in.nextInt();
+
+    int[][] arr = new int[m][n];
+
+    for (int i=0; i<m; i++){
+      for (int j=0; j<n; j++){
+        arr[i][j] = in.nextInt();
+      }
+    }
+    
+    for (int i=0; i<m; i++){
+      for (int j=0; j<n; j++){
+        sum += arr[i][j];
+      }
+      if (sum>wealth){
+        wealth = sum ;
+      }
+      sum = 0;
+    }
+
+    System.out.println(wealth);
+
+  }
+}
