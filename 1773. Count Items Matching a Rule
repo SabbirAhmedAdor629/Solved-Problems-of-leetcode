@@ -1,0 +1,45 @@
+     
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+class Main {
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    ArrayList <ArrayList<String>> items = new ArrayList<>();
+
+    System.out.println("Enter ruleKey : ");
+    String ruleKey = in.next();
+    System.out.println("Enter ruleValue :");
+    String ruleValue = in.next();
+    for (int i=0; i<3; i++){
+      items.add(new ArrayList<String>());
+    }
+    System.out.println("Enter values of Array List : ");
+    for (int i=0; i<3; i++){
+      for (int j=0; j<3; j++){
+        items.get(i).add(in.next());
+      }
+    }
+
+    System.out.println(items);
+
+    System.out.println(countMatches(items, ruleKey, ruleValue));
+  }
+
+  public static int countMatches(ArrayList<ArrayList<String>> items, String ruleKey, String ruleValue) {
+        int temp;
+        if (ruleKey.equals("type")) {
+            temp = 0;
+        } else if (ruleKey.equals("color")) {
+            temp = 1;
+        } else {
+            temp = 2;
+        }
+        int count = 0;
+        for (ArrayList<String> a : items)
+            if (a.get(temp).equals(ruleValue))
+                count++;
+        return count;
+    }
+
+}
