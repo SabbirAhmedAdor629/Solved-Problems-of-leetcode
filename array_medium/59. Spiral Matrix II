@@ -1,0 +1,64 @@
+class Solution {
+    public int[][] generateMatrix(int n) {
+        
+        int[][] matrix = new int[n][n];
+        
+         if (matrix.length == 0) {
+            return matrix;
+        }
+        
+        int a = 0;
+        
+        
+        int rowStart = 0;
+        int rowEnd = matrix.length-1;
+        int columnStart = 0;
+        int columnEnd = matrix[0].length - 1;
+        
+        
+        
+        
+        while (rowStart <= rowEnd && columnStart <= columnEnd) {
+           
+            for (int currentIndex = columnStart; currentIndex <= columnEnd; currentIndex++) {
+               
+                matrix[rowStart][currentIndex] = ++a;
+            }
+           
+            rowStart++;
+
+            
+            for (int currentIndex = rowStart; currentIndex <= rowEnd; currentIndex++) {
+               
+                matrix[currentIndex][columnEnd] = ++a;
+            }
+            
+            columnEnd--;
+
+            
+           
+            if (rowStart <= rowEnd) {
+                
+                for (int currentIndex = columnEnd; currentIndex >= columnStart; currentIndex --) {
+                    
+                    matrix[rowEnd][currentIndex] = ++a;
+                }
+            }
+            
+            rowEnd--;
+
+           
+            if (columnStart <= columnEnd) {
+                
+                for (int currentIndex = rowEnd; currentIndex >= rowStart; currentIndex --) {
+                    
+                    matrix[currentIndex][columnStart] = ++a;
+                }
+            }
+            
+            columnStart++;
+        }
+        
+        return matrix;
+    }
+} 
