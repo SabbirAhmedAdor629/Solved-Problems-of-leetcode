@@ -23,9 +23,7 @@ public class SpiralMatrix {
         List<Integer> arrayList = new ArrayList<>();
 
         // If the matrix is empty, return it
-        if (matrix.length == 0) {
-            return arrayList;
-        }
+        if(matrix == null || matrix.length == 0 ||matrix[0].length == 0) return arrayList;
 
         // Sets the beginning of a row, default is index 0
         int rowStart = 0;
