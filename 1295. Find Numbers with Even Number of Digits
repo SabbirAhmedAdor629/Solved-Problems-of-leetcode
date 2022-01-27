@@ -14,6 +14,9 @@ public class EvenDigits {
         System.out.println("Input Array: "+ Arrays.toString(nums));
         System.out.println("Numbers having even digits count: "+ findNumbers(nums));
     }
+    
+    
+    
     public static int findNumbers(int[] nums) {
         int res = 0;
         for (int i = 0; i < nums.length; i++){
@@ -34,4 +37,16 @@ public class EvenDigits {
         }
         return total_digits % 2 == 0;
     }
+    
+    
+    
+    // to increase the effieciency we can use
+    /* 
+    static int digits2 (int num){
+        return (int)(math.log10(num)) + 1;
+        }
+    
+    
+    
+    
 }
