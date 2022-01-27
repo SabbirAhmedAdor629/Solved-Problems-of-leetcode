@@ -24,6 +24,9 @@ public class EvenDigits {
         return res;
     }
     public static boolean isEven(int n){
+   
+        if(n<0) num *= -1;
+    
         int total_digits = 0;
         while(n > 0){
             total_digits += 1;
