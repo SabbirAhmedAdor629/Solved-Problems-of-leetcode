@@ -45,6 +45,7 @@ public class EvenDigits {
     static int digits2 (int num){
         return (int)(math.log10(num)) + 1;
         }
+     */
     
     
     
