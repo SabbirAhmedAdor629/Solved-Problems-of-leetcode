@@ -1,0 +1,63 @@
+// will solve this problem after completing the oop part
+// Approach will be same rather than binary search we have to apply order agnostic
+// binary search 
+
+
+/**
+ * // This is MountainArray's API interface.
+ * // You should not implement it, or speculate about its implementation
+ * interface MountainArray {
+ *     public int get(int index) {}
+ *     public int length() {}
+ * }
+ */
+ 
+class Solution {
+    public int findInMountainArray(int target, MountainArray mountainArr) {
+        return index(search(mountainArr,target));
+    }
+    
+    int search(int[] arr, int target){
+        int peak = peakIndexInMountainArray(arr);
+        int asc = BinSearch(arr,0,peak, target);
+        if (asc == -1){
+            int dsc = BinSearch(arr,peak,arr.length-1, target);
+        }
+        
+        
+    }
+    
+    
+    int peakIndexInMountainArray(int[] arr) {
+        int start = 0;
+        int end = (arr.length-1);
+        
+        while(start<end){
+            int mid = start + (end-start)/2 ;
+            if (arr[mid] > arr[mid+1]){
+                end = mid;
+            }
+            else {
+                start = mid+1;
+            }
+            }
+        return start;
+        }
+    
+    int BinSearch(int[] arr, int start, int end, int target){
+         while (start<=end){
+            int mid = start + (end-start)/2;
+            if (arr[mid] == target){
+                return mid;
+            }
+            if (arr[mid] > target){
+                end = mid - 1;
+            }
+            else{
+                start = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
+
