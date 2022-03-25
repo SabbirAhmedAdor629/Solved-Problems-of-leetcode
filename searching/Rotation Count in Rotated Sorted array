@@ -7,9 +7,7 @@ class LinearSearch
     public static void main (String[] args)
     {
         int nums[] = {15, 18, 2, 3, 6, 12};
-        
         int pivot = findPivot(nums);
-     
         System.out.println(pivot+1);
     }
     
