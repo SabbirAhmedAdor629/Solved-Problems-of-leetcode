@@ -17,3 +17,8 @@ class Solution {
         return false;
     }
 }
+
+
+
+
+// how length in 2D Array works  :  https://www.devcubicle.com/java-2d-array-length/#:~:text=Length%20of%202d,Array%20is%20%3A%203
