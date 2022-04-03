@@ -5,6 +5,8 @@ class Solution {
 
         int start = 0;
         int end = numbers.length-1;
+        
+        
         while(start <= end) {
             int sum = numbers[start] + numbers[end];
             if(sum == target) {
@@ -19,4 +21,10 @@ class Solution {
         }
         return new int[]{++start,++end};
     }
+    
+    // to reduce run time  :
+    // we can also add a binary search algo to find
+        // the least pick element for target in the array
+        // after finding the least peak element 
+        // we can do above search form start to least peak element to find the ans
 }
