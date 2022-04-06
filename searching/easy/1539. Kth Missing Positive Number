@@ -24,3 +24,4 @@ class Solution {
 // if we thought in this way [1,2,3,4,11] then between 4 to 11 
 // missing values are 5,6,7,8,9 so l value (4) + k will get me the answer
 // 
+// https://www.youtube.com/watch?v=Nfu-ubvJaZ0
