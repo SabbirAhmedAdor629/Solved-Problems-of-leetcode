@@ -1,0 +1,18 @@
+class Solution {
+    public int countNegatives(int[][] grid) {
+        int row = 0;
+        int col = grid[row].length-1;
+        int sum = -1;
+        
+        while (col>=0  &&  row <= grid.length-1){
+            if (grid[row][col] >= 0){
+                row++;
+            }
+            else{
+                sum += (grid.length-1) - row + 1;
+                col--;
+            }
+        }
+        return sum + 1;
+    }
+}
