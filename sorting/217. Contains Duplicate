@@ -1,0 +1,52 @@
+//Solution 
+// All test cases passed but takes too long
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        insertionSort(nums);
+        boolean checker = false;
+        for(int i = 0;i < nums.length-1;i++){
+            if(nums[i] == nums[i+1]){
+                checker = true;
+                break;
+            }
+        }
+        return checker;
+    }
+    
+    public void insertionSort(int[] arr){
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i+1; j > 0 ; j--) {
+                if(arr[j] < arr[j-1]){
+                    swapArray(arr,j,j-1);
+                }else {
+                    break;
+                }
+            }
+        }
+    }
+    public void swapArray(int[] arr,int first,int second){
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+    
+}
+
+
+
+//Another Solution
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        if(nums.length == 1){
+            return false;
+        }
+        Arrays.sort(nums);
+        for(int i = 0;i < nums.length-1;i++){
+            if(nums[i] == nums[i+1]){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+}
