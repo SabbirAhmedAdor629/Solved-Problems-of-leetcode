@@ -1,0 +1,35 @@
+//The intiution was same so i get the code from this 
+//link : https://codedestine.com/height-checker-array-problem/ to save time
+
+// Another intituion would be we can count the values while sorting them like using insertion sort
+
+
+
+import java.util.Arrays;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {        
+        Main main = new Main();
+        int result = main.heightChecker(new int[] {1, 5, 4, 2, 6, 3});
+        System.out.println(result);
+    }
+     
+    /* Solution */   
+    public int heightChecker(int[] heights) {
+        int[] newHeights = new int[heights.length];
+        for(int i=0; i<heights.length; i++){
+            newHeights[i] = heights[i];
+        }
+         
+        Arrays.sort(heights);
+         
+        int count = 0;
+        for(int i=0; i<heights.length; i++){
+            if(newHeights[i] != heights[i]){
+                count++;
+            }
+        }
+        return count;
+    }
+}
