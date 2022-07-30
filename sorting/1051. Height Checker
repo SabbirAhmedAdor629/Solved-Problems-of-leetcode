@@ -42,6 +42,7 @@ public class Main {
 
 
 // Another intituion would be we can count the values while sorting them like using insertion sort
+ // trying to solve it on O(1) space complexity
 
 class Solution {
     public int heightChecker(int[] heights) {
