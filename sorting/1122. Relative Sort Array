@@ -1,0 +1,34 @@
+Intution behind the solution :
+
+first sort the array 
+then double for loop , i<arr2.length, j<arr1.length
+adding elements from the arr1 to the output array maintining the order of arr2
+single for lop to add remaining elements which left at the arr1
+
+
+class Solution {
+    public int[] relativeSortArray(int[] arr1, int[] arr2) {
+        Arrays.sort(arr1);
+        int[] ans = new int[arr1.length];
+        int k = 0;
+        for (int i = 0; i < arr2.length; i++) {
+            for (int j = 0; j < arr1.length; j++) {
+                if (arr2[i] == arr1[j]){
+                    ans[k++] = arr1[j];
+                    arr1[j] = -1;
+                }
+            }
+        }
+        for (int i : arr1){
+            if (i != -1) ans[k++] = i;
+        }
+        return ans;
+    }
+}
+
+
+
+
+intituion was similar so i take the code from this link : 
+https://leetcode.com/problems/relative-sort-array/discuss/2327263/Java-Solution-or-2ms-Faster
+to save time of coding
