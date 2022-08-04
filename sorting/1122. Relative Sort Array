@@ -17,6 +17,9 @@ class Solution {
                     ans[k++] = arr1[j];
                     arr1[j] = -1;
                 }
+                if (arr1[j]>arr2[i]){
+                    break;
+                }
             }
         }
         for (int i : arr1){
