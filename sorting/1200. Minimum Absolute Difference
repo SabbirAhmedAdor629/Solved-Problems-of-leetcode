@@ -1,0 +1,71 @@
+intution :
+take a list of containing lists
+find the min_difference
+sort the array 
+iterate over the array 
+  if ([j]-[j-1] == min_defference)
+  then make a new pair 
+
+
+
+
+
+
+class Solution {
+    public List<List<Integer>> minimumAbsDifference(int[] arr) {
+        List<List<Integer>> x = new ArrayList<>();
+        int min_diff = Integer.MAX_VALUE;
+        Arrays.sort(arr);
+        
+         for(int i=1; i<arr.length;i++){
+            int current_diff = arr[i]-arr[i-1];         
+
+            if(current_diff<min_diff){
+                min_diff = current_diff;
+            }
+         }
+        
+
+        for(int i=1; i<arr.length;i++){
+
+            int current_diff = arr[i]-arr[i-1];
+
+            if(current_diff==min_diff){
+                x.add( Arrays.asList(arr[i-1], arr[i]) );
+            }
+        }
+
+        return x;
+    }
+}
+
+
+
+
+also it can be done in one single for loop :
+
+class Solution {
+    public List<List<Integer>> minimumAbsDifference(int[] arr) {
+        List<List<Integer>> x = new ArrayList<>();
+        int diff = Integer.MAX_VALUE;
+        Arrays.sort(arr);
+
+        for(int i=1; i<arr.length;i++){
+
+            int current = arr[i]-arr[i-1];         
+
+            if(current<diff){
+                x = new ArrayList<>();
+                diff = current;
+            }
+
+            if(current==diff)
+                x.add( Arrays.asList(arr[i-1], arr[i]) );
+        }
+
+        return x;
+    }
+}
+
+
+
