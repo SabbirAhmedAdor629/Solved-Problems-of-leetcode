@@ -3,16 +3,16 @@ helping hand : https://leetcode.com/problems/how-many-numbers-are-smaller-than-t
 //BRUTEFORCE APPROACH
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] arr) {
-      int n=arr.length,cnt;
-      int[] res=new int[n];
-      for(int i=0;i<n;i++)
+      int count;
+      int[] res=new int[arr.length];
+      for(int i=0;i<arr.length;i++)
       {
-         cnt=0;
-         for(int j=0;j<n;j++)
+         count=0;
+         for(int j=0;j<arr.length;j++)
           if(arr[j]<arr[i])
-            cnt++;
+            count++;
          
-         res[i]=cnt;
+         res[i]=count;
       }
       return res;
     }
