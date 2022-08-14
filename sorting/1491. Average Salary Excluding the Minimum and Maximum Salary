@@ -1,0 +1,27 @@
+class Solution {
+    public double average(int[] salary) {
+        Arrays.sort(salary);
+        double sum = 0;
+        double counter = 0;
+        for (int i=1; i<=salary.length-2; i++){
+            sum += salary[i];
+            counter++;
+        }
+        return sum/counter;
+    }
+}
+
+
+another solution : 
+class Solution {
+    public double average(int[] salary) {
+        double sum = 0d;
+        int M = Integer.MIN_VALUE, m = Integer.MAX_VALUE;   // but how 1000 is smaller tham integer.min_value ??
+        for (int s : salary) {
+            m = Math.min(m, s);
+            M = Math.max(M, s);
+            sum += s;
+        }
+        return (sum - m - M) / (salary.length - 2);
+    }
+}
