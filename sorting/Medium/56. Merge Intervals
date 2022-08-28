@@ -31,5 +31,6 @@ class Solution {
                 }
         }
         return list.toArray(new int[list.size()][2]);
+        // 2d array : [no of rows][no of column] 
     }
 }
