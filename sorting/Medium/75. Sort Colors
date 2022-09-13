@@ -1,0 +1,36 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            int last_index = nums.length-i-1;
+            
+            int max_index = getMaxIndex(nums, 0, last_index);
+            
+            swap(nums, max_index, last_index);
+        }
+        
+        for(Integer i:nums){
+            System.out.print(i + " ");
+        }
+            
+        
+    }
+    
+    static void swap(int[] arr, int first, int second){
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+  
+    
+     static int getMaxIndex(int[] arr, int start, int end){
+        int max = start;
+        for (int i=start; i<=end; i++){
+            if (arr[max] < arr[i]){
+                max = i;
+            }
+        }
+        return max;
+     }
+    
+    
+}
