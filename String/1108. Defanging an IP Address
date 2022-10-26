@@ -1,0 +1,19 @@
+// It is a very basic question just you need to know about append and relplce function of java
+class Solution {
+    public String defangIPaddr(String address) {
+        String str="";
+        for(int i=0;i<address.length();i++){
+            if(address.charAt(i)=='.')
+            {
+                str=str+"[.]";
+            }else{
+                str=str + address.charAt(i);
+            }
+        }
+        return str;
+    }
+}
+
+
+// Another Solution<
+return address.replace(".","[.]");
