@@ -1,0 +1,14 @@
+
+//My Note : https://drive.google.com/file/d/1BrhQ9Bjbah9jADsS13pFzJRjzGR_vAh7/view?usp=drivesdk
+
+Solve 1 : 
+// https://leetcode.com/problems/shuffle-string/discuss/755764/Java-3-lines
+ public String restoreString(String s, int[] indices) {
+        char[] arr = new char[s.length()];
+        for (int i = 0; i < indices.length; i++) arr[indices[i]] = s.charAt(i);
+        return String.valueOf(arr);
+    }
+
+Solve 2:
+// using cyclic sort 
+// https://leetcode.com/problems/shuffle-string/discuss/986260/Java-Cyclic-Sort-99.92-O(n)-Time-O(1)-Space
