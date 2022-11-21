@@ -1,4 +1,8 @@
 // It is a very basic question just you need to know about append and relplce function of java
+
+
+Solve 1 : 
+// This solution is also can be possible using string builder
 class Solution {
     public String defangIPaddr(String address) {
         String str="";
@@ -15,5 +19,6 @@ class Solution {
 }
 
 
+Solve 2 :
 // Another Solution<
 return address.replace(".","[.]");
